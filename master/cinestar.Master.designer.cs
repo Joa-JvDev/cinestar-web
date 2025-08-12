@@ -11,7 +11,7 @@ namespace cinestar_web.masterPages
 {
 
 
-    public partial class cinestar
+    public partial class Site1
     {
 
         /// <summary>

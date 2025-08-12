@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>cinestar_web</RootNamespace>
     <AssemblyName>cinestar-web</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44350</IISExpressSSLPort>
@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -126,19 +127,28 @@
     <Content Include="content\img\varios\ico-twitter.png" />
     <Content Include="content\img\varios\logo-cinestar.png" />
     <Content Include="content\img\varios\starcard.jpg" />
+    <Content Include="pages\cine.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="masterPages\cinestar.Master.cs">
+    <Compile Include="master\cinestar.Master.cs">
+      <DependentUpon>cinestar.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\cinestar.Master.designer.cs">
       <DependentUpon>cinestar.Master</DependentUpon>
     </Compile>
-    <Compile Include="masterPages\cinestar.Master.designer.cs">
-      <DependentUpon>cinestar.Master</DependentUpon>
+    <Compile Include="pages\cine.aspx.cs">
+      <DependentUpon>cine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\cine.aspx.designer.cs">
+      <DependentUpon>cine.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="masterPages\cinestar.Master" />
+    <Content Include="master\cinestar.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -150,7 +160,6 @@
   <ItemGroup>
     <Folder Include="controllers\" />
     <Folder Include="models\" />
-    <Folder Include="pages\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
